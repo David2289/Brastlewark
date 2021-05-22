@@ -4,17 +4,18 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.davidpl.brastlewark.business.model.User
+import com.davidpl.brastlewark.business.repository.UsersRepository
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.schedulers.Schedulers
 import javax.inject.Inject
 
-class ListViewModel /*@Inject constructor(private val usersRepository: UsersRepository)*/ : ViewModel() {
+class ListViewModel @Inject constructor(private val usersRepository: UsersRepository) : ViewModel() {
 
     var userListLiveData: MutableLiveData<List<User>> = MutableLiveData()
     var userList: ArrayList<User> = ArrayList()
 
-    /*fun getUsers() {
-        usersRepository.getUsers(1)
+    fun getUsers() {
+        usersRepository.getUsers()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(this::handleFirstListResponse, this::handleError)
@@ -23,11 +24,11 @@ class ListViewModel /*@Inject constructor(private val usersRepository: UsersRepo
     private fun handleFirstListResponse(userList: List<User>) {
         this.userList.clear()
         this.userList.addAll(userList)
-        usersRepository.getUsers(2)
+        usersRepository.getUsers()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(this::handleSecondListResponse, this::handleError)
-    }*/
+    }
 
     private fun handleSecondListResponse(userList: List<User>) {
         this.userList.addAll(userList)

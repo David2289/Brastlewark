@@ -3,35 +3,29 @@ package com.davidpl.brastlewark.business.model
 import android.os.Parcelable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
+import androidx.room.Ignore
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-@Entity(tableName = "table_user")
 data class User(
-        @PrimaryKey
-        @ColumnInfo(name = "id")
-        @SerializedName("id")
-        var id: Int,
+        @SerializedName("id") val id: Int,
 
-        @ColumnInfo(name = "page")
-        var page: Int,
+        @SerializedName("name") val name: String,
 
-        @ColumnInfo(name = "email")
-        @SerializedName("email")
-        var email: String,
+        @SerializedName("thumbnail") val thumbnail: String,
 
-        @ColumnInfo(name = "first_name")
-        @SerializedName("first_name")
-        var firstName: String,
+        @SerializedName("age") val age: Int,
 
-        @ColumnInfo(name = "last_name")
-        @SerializedName("last_name")
-        var lastName: String,
+        @SerializedName("weight") val weight: Double,
 
-        @ColumnInfo(name = "avatar")
-        @SerializedName("avatar")
-        var avatar: String
+        @SerializedName("height") val height: Double,
+
+        @SerializedName("hair_color") val hairColor: String,
+
+        @SerializedName("professions") val professions: List<String>?,
+
+        @SerializedName("friends") val friends: List<String>?
 
 ) : Parcelable

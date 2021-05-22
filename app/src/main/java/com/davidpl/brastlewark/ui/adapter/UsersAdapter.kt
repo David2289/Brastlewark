@@ -20,8 +20,8 @@ class UsersAdapter(var userList: List<User>, val onItemClick: (user: User) -> Un
 
     override fun onBindViewHolder(holder: UserVH, position: Int) {
         val user = userList.get(position)
-        Picasso.get().load(user.avatar).into(holder.photo)
-        val completeName = user.firstName + " " + user.lastName
+        Picasso.get().load(user.thumbnail).into(holder.photo)
+        val completeName = user.name + " " + user.age
         holder.name.text = completeName
         holder.view.setOnClickListener { onItemClick(user) }
     }

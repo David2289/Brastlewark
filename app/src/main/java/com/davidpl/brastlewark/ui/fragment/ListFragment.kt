@@ -17,9 +17,10 @@ import com.davidpl.brastlewark.databinding.ListFragmentBinding
 import com.davidpl.brastlewark.ui.utility.helper.Constants
 import com.davidpl.brastlewark.ui.viewmodel.ListViewModel
 import com.example.display.ui.adapter.UsersAdapter
+import dagger.android.support.DaggerFragment
 import javax.inject.Inject
 
-class ListFragment : Fragment() {
+class ListFragment : DaggerFragment() {
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
@@ -42,7 +43,7 @@ class ListFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.list_fragment, container, false)
         configUsersUI()
         binding.loadingContent.loading.visibility = View.VISIBLE
-//        viewModel.getUsers()
+        viewModel.getUsers()
         return binding.root
     }
 

@@ -8,7 +8,8 @@ import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.core.Single
 import javax.inject.Inject
 
-class UsersRepository @Inject constructor(private val remoteDataSource: UsersRemoteDataSource)  {
+class UsersRepository @Inject constructor(private val remoteDataSource: UsersRemoteDataSource,
+                                          private val localDataSource: UsersLocalDataSource)  {
 
     fun getUsers(): Single<List<User>> {
         return remoteDataSource.fetchUsers()
@@ -17,6 +18,7 @@ class UsersRepository @Inject constructor(private val remoteDataSource: UsersRem
     }
 
     private fun saveUsers(users: Users) {
+        localDataSource.saveUser(users)
     }
 
 }

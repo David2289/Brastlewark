@@ -18,10 +18,6 @@ class UsersAdapter(var userList: ArrayList<User>, val onItemClick: (user: User) 
     lateinit var context: Context
     var filteredList = ArrayList<User>()
     var totalList = ArrayList<User>()
-//
-//    init {
-//        userFilteredList = userList
-//    }
 
     fun updateTotalList() {
         this.totalList.clear()
@@ -40,7 +36,7 @@ class UsersAdapter(var userList: ArrayList<User>, val onItemClick: (user: User) 
         Picasso.get().load(user.thumbnail).into(holder.photo)
         holder.name.text = user.name
         holder.age.text = String.format(context.resources.getString(R.string.screen_list_item_age), user.age.toString())
-        holder.hair.text = String.format(context.resources.getString(R.string.screen_list_item_hair), user.hairColor.toString())
+        holder.hair.text = String.format(context.resources.getString(R.string.screen_list_item_hair), user.hairColor)
         holder.view.setOnClickListener { onItemClick(user) }
     }
 

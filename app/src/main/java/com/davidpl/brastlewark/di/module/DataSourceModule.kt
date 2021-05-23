@@ -46,26 +46,26 @@ class DataSourceModule {
         return retrofit.create(APIService::class.java)
     }
 
-//    @Provides
-//    fun provideUserDatabase(context: Application): UserDatabase {
-//        return Room.databaseBuilder(context, UserDatabase::class.java, Constants.USER_DATABASE)
-//            .allowMainThreadQueries()
-//            .build()
-//    }
+    @Provides
+    fun provideUserDatabase(context: Application): UserDatabase {
+        return Room.databaseBuilder(context, UserDatabase::class.java, Constants.USER_DATABASE)
+            .allowMainThreadQueries()
+            .build()
+    }
 
-//    @Provides
-//    fun provideUserDao(userDatabase: UserDatabase): UserDao {
-//        return userDatabase.userDao()
-//    }
+    @Provides
+    fun provideUserDao(userDatabase: UserDatabase): UserDao {
+        return userDatabase.userDao()
+    }
 
     @Provides
     fun provideUsersRemoteDataSource(apiService: APIService): UsersRemoteDataSource {
         return UsersRemoteDataSource(apiService)
     }
 
-//    @Provides
-//    fun providesUsersLocalDataSource(userDao: UserDao): UsersLocalDataSource {
-//        return UsersLocalDataSource(userDao)
-//    }
+    @Provides
+    fun providesUsersLocalDataSource(userDao: UserDao): UsersLocalDataSource {
+        return UsersLocalDataSource(userDao)
+    }
 
 }

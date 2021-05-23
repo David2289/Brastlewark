@@ -5,5 +5,12 @@
     <string name="commons_next">Next</string>
 
     <string name="screen_list_title">Inhabitants</string>
+    <string name="screen_list_item_name">Name: %1$s</string>
+    <string name="screen_list_item_age">Age: %1$s</string>
+    <string name="screen_list_item_weight">Weight: %1$s</string>
+    <string name="screen_list_item_height">Height: %1$s</string>
+    <string name="screen_list_item_hair">Hair color: %1$s</string>
+
+    <string name="screen_detail_title">Detail</string>
 
 </resources>

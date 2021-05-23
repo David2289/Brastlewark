@@ -14,6 +14,7 @@
 
         <action
             android:id="@+id/action_list_to_detail"
+            app:destination="@id/detail"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"
             app:enterAnim="@anim/slide_in_right"
@@ -21,10 +22,10 @@
 
     </fragment>
 
-    <!--<fragment
+    <fragment
         android:id="@+id/detail"
-        android:name="com.example.display.ui.fragment.DetailFragment"
+        android:name="com.davidpl.brastlewark.ui.fragment.DetailFragment"
         android:label="@string/screen_detail_title"
-        tools:layout="@layout/detail_fragment" />-->
+        tools:layout="@layout/detail_fragment" />
 
 </navigation>

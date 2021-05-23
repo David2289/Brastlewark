@@ -10,10 +10,23 @@ import androidx.recyclerview.widget.RecyclerView
 import com.davidpl.brastlewark.R
 import com.davidpl.brastlewark.business.model.User
 import com.squareup.picasso.Picasso
+import java.util.*
+import kotlin.collections.ArrayList
 
-class UsersAdapter(var userList: List<User>, val onItemClick: (user: User) -> Unit) : RecyclerView.Adapter<UsersAdapter.UserVH>() {
+class UsersAdapter(var userList: ArrayList<User>, val onItemClick: (user: User) -> Unit) : RecyclerView.Adapter<UsersAdapter.UserVH>() {
 
     lateinit var context: Context
+    var filteredList = ArrayList<User>()
+    var totalList = ArrayList<User>()
+//
+//    init {
+//        userFilteredList = userList
+//    }
+
+    fun updateTotalList() {
+        this.totalList.clear()
+        this.totalList.addAll(userList)
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserVH {
         context = parent.context
@@ -36,6 +49,22 @@ class UsersAdapter(var userList: List<User>, val onItemClick: (user: User) -> Un
         val name: TextView = view.findViewById(R.id.name)
         val age: TextView = view.findViewById(R.id.age)
         val hair: TextView = view.findViewById(R.id.hair)
+    }
+
+    // Filter Class
+    fun filter(charText: String) {
+        userList.clear()
+        if (charText.length == 0) {
+            userList.addAll(totalList)
+        } else {
+            for (item in totalList) {
+                if (item.name.toLowerCase(Locale.getDefault()).contains(charText.toLowerCase(Locale.getDefault()))) {
+                    filteredList.add(item)
+                }
+            }
+            userList.addAll(filteredList)
+        }
+        notifyDataSetChanged()
     }
 
     override fun getItemCount(): Int {

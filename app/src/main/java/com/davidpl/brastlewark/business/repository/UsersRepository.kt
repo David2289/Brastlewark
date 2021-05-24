@@ -12,13 +12,19 @@ class UsersRepository @Inject constructor(private val remoteDataSource: UsersRem
                                           private val localDataSource: UsersLocalDataSource)  {
 
     fun getUsers(): Single<List<User>> {
-        return remoteDataSource.fetchUsers()
+        return if (localDataSource.isDataStored()) {
+            Single.just(localDataSource.getUserList())
+        }
+        else {
+            remoteDataSource.fetchUsers()
                 .doOnSuccess(::saveUsers)
                 .flatMap { response -> Observable.fromIterable(response.users).toList() }
+        }
+
     }
 
     private fun saveUsers(users: Users) {
-        localDataSource.saveUser(users)
+//        localDataSource.saveUser(users)
     }
 
 }

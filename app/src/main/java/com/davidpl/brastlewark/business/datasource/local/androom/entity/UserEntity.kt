@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "gnomes_table")
 class UserEntity (
-    @ColumnInfo(name = "id") val id: String,
+    @ColumnInfo(name = "id") val id: Int,
     @ColumnInfo(name = "name") val name: String,
     @ColumnInfo(name = "thumbnail") val thumbnail: String,
     @ColumnInfo(name = "age") val age: Int,

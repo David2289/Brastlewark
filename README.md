@@ -3,8 +3,8 @@
 Simple App written in Kotlin used to query the data from all the inhabitants from Brastlewark town.
 
 ### Dashboard
-'Home' tab shows a little presentation and explanation about the App goal.
-'List' tab shows a list of topics of Android development.
+'List' Shows a list of Brastlewark's inhabitants.
+'Detail' Shows the detail from the inhabitant selected from the previous screen.
 
 ### Language
 * Kotlin.
@@ -13,7 +13,7 @@ Simple App written in Kotlin used to query the data from all the inhabitants fro
 * MVVM architecture.
 * LiveData.
 
-### Tech
+### Tech Libraries
 * Dagger2.
 * Data Binding.
 * Navigation Component.
@@ -21,6 +21,8 @@ Simple App written in Kotlin used to query the data from all the inhabitants fro
 * RxJava.
 * Retrofit.
 
+### Issue
+The thumbnail images can't be loaded from http://www.publicdomainpictures.net/ so, so the project has an error manage in case the image is not loaded correctly.
+
 ### Author
 David PL.
-

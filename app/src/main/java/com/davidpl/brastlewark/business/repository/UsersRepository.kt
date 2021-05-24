@@ -24,7 +24,7 @@ class UsersRepository @Inject constructor(private val remoteDataSource: UsersRem
     }
 
     private fun saveUsers(users: Users) {
-//        localDataSource.saveUser(users)
+        localDataSource.saveUser(users)
     }
 
 }

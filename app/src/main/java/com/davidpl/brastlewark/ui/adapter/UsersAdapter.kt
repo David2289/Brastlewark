@@ -33,7 +33,7 @@ class UsersAdapter(var userList: ArrayList<User>, val onItemClick: (user: User) 
 
     override fun onBindViewHolder(holder: UserVH, position: Int) {
         val user = userList.get(position)
-        Picasso.get().load(user.thumbnail).into(holder.photo)
+        Picasso.get().load(user.thumbnail).error(R.drawable.ic_user).into(holder.photo)
         holder.name.text = user.name
         holder.age.text = String.format(context.resources.getString(R.string.screen_list_item_age), user.age.toString())
         holder.hair.text = String.format(context.resources.getString(R.string.screen_list_item_hair), user.hairColor)

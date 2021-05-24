@@ -18,13 +18,13 @@ class UsersLocalDataSource @Inject constructor(private val userDao: UserDao) {
         val userList = ArrayList<User>()
         for (userEntity in userDao.getAll()) {
             val professions = ArrayList<String>()
-            for (profession in userDao.getProfession(userEntity.id)) {
-                professions.add(profession)
-            }
+//            for (profession in userDao.getProfession(userEntity.id)) {
+//                professions.add(profession)
+//            }
             val friends = ArrayList<String>()
-            for (friend in userDao.getFriends(userEntity.id)) {
-                friends.add(friend)
-            }
+//            for (friend in userDao.getFriends(userEntity.id)) {
+//                friends.add(friend)
+//            }
             val user = User(userEntity.id, userEntity.name, userEntity.thumbnail, userEntity.age,
                 userEntity.weight, userEntity.height, userEntity.hairColor, professions, friends)
             userList.add(user)

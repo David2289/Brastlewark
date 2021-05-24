@@ -25,7 +25,7 @@ class DetailFragment: Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.detail_fragment, container, false)
         user = arguments?.getParcelable<User>(Constants.BUNDLE_USER) as User
         binding.user = user
-        Picasso.get().load(user.thumbnail).into(binding.photo)
+        Picasso.get().load(user.thumbnail).error(R.drawable.ic_user).into(binding.photo)
         return binding.root
     }
 

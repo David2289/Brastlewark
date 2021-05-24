@@ -93,6 +93,9 @@ dependencies {
 
     // PICASSO
     implementation "com.squareup.picasso:picasso:2.71828"
+    implementation 'com.squareup.okhttp:okhttp:2.2.0'
+    implementation 'com.squareup.okhttp:okhttp-urlconnection:2.0.0-RC2'
+    implementation 'com.squareup.okhttp3:okhttp:3.0.1'
 
     // JUNIT
     testImplementation 'junit:junit:4.13.2'

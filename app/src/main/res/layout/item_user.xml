@@ -22,8 +22,8 @@
 
         <ImageView
             android:id="@+id/photo"
-            android:layout_width="70dp"
-            android:layout_height="80dp"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -37,7 +37,7 @@
             app:layout_constraintStart_toEndOf="@+id/photo"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:paddingStart="@dimen/commons_10dp"
+            android:paddingStart="@dimen/commons_20dp"
             android:paddingEnd="@dimen/commons_10dp"
             android:layout_marginTop="@dimen/commons_05dp"
             tools:text="Pancho Villa"/>
@@ -50,7 +50,7 @@
             app:layout_constraintStart_toEndOf="@+id/photo"
             app:layout_constraintTop_toBottomOf="@+id/name"
             app:layout_constraintEnd_toEndOf="parent"
-            android:paddingStart="@dimen/commons_10dp"
+            android:paddingStart="@dimen/commons_20dp"
             android:paddingEnd="@dimen/commons_10dp"
             android:layout_marginTop="@dimen/commons_05dp"
             tools:text="Age: 388"/>
@@ -64,7 +64,7 @@
             app:layout_constraintTop_toBottomOf="@+id/age"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:paddingStart="@dimen/commons_10dp"
+            android:paddingStart="@dimen/commons_20dp"
             android:paddingEnd="@dimen/commons_10dp"
             android:layout_marginTop="@dimen/commons_05dp"
             android:layout_marginBottom="@dimen/commons_05dp"
